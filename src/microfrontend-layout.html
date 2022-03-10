@@ -1,0 +1,33 @@
+<single-spa-router>
+  <main>
+      <nav>
+        <application name="@joaoc/mf-header"></application>
+      </nav>
+    
+      <div class="mf-content">
+        <route default>
+          <application name="@joaoc/mf-home"></application>
+        </route>
+
+        <route path="/continents">
+          <application name="@joaoc/mf-continents"></application>
+        </route>
+
+        <route path="/europe">
+          <application name="@joaoc/mf-europe"></application>
+        </route>
+
+        <route path="/africa">
+          <application name="@joaoc/mf-africa"></application>
+        </route>
+
+        <route path="/america">
+          <application name="@joaoc/mf-america"></application>
+        </route>
+      </div>
+      
+      <footer>
+        <application name="@joaoc/mf-footer"></application>
+      </footer>
+  </main>
+</single-spa-router>
