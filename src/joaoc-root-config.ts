@@ -4,17 +4,30 @@ import {
   constructRoutes,
   constructLayoutEngine,
 } from "single-spa-layout";
-import microfrontendLayout from "./microfrontend-layout.html";
+import { RoutesConfig } from "single-spa-layout/dist/types/isomorphic/constructRoutes";
 
-const routes = constructRoutes(microfrontendLayout);
-const applications = constructApplications({
-  routes,
-  loadApp({ name }) {
-    return System.import(name);
-  },
-});
-const layoutEngine = constructLayoutEngine({ routes, applications });
+function getTemplate() {
+  fetch('http://localhost:3000/template')
+    .then(response => {
+      if (!response.ok) {
+          throw new Error(response.statusText)
+        }
+        return response.json() as Promise<RoutesConfig>
+    })
+    .then(template => {
+          const routes = constructRoutes(template)
+          const applications = constructApplications({
+      routes,
+      loadApp({ name }) {
+        return System.import(name);
+      },
+    });
+    const layoutEngine = constructLayoutEngine({ routes, applications });
 
-applications.forEach(registerApplication);
-layoutEngine.activate();
-start();
+    applications.forEach(registerApplication);
+    layoutEngine.activate();
+    start();
+    })
+}
+
+getTemplate();

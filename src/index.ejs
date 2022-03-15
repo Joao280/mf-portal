@@ -32,14 +32,8 @@
 
     More information about shared dependencies can be found at https://single-spa.js.org/docs/recommended-setup#sharing-with-import-maps.
   -->
-  <script type="systemjs-importmap">
-    {
-      "imports": {
-        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
-        "react": "https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js",
-        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js"
-      }
-    }
+  <script type="systemjs-importmap" src="http://localhost:3000/importmaps">
+    
   </script>
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
 
@@ -47,21 +41,8 @@
   <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
 
   <% if (isLocal) { %>
-  <script type="systemjs-importmap">
-    {
-      "imports": {
-        "@joaoc/root-config": "//localhost:9000/joaoc-root-config.js",
-        "@joaoc/mf-header": "//localhost:8080/joaoc-mf-header.js",
-        "@joaoc/mf-footer": "//localhost:8081/joaoc-mf-footer.js",
-        "@joaoc/mf-home": "//localhost:8082/joaoc-mf-home.js",
-        "@joaoc/mf-continents": "//localhost:4200/main.js",
-        "@joaoc/mf-europe": "//localhost:8083/js/app.js",
-        "@joaoc/mf-africa": "//localhost:4201/main.js",
-        "@joaoc/mf-america": "//localhost:8084/joaoc-mf-america.js",
-        "@joaoc/mf-shared": "//localhost:8085/joaoc-mf-shared.js"
-      }
-    }
-  </script>
+  <!-- <script type="systemjs-importmap">
+  </script> -->
   <% } %>
 
   <!--
@@ -81,9 +62,6 @@
 
 </head>
 <body>
-  <noscript>
-    You need to enable JavaScript to run this app.
-  </noscript>
   <script>
     System.import('@joaoc/root-config');
   </script>

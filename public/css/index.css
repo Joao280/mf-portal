@@ -2,12 +2,8 @@ html, body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 100%;
-}
-
-main {
     display: flex;
     flex-flow: column;
-    height: 100%;
 }
 
 .mf-content {
