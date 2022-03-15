@@ -1,20 +1,20 @@
-html, body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 100%;
-    display: flex;
-    flex-flow: column;
+html,
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
 }
 
 .mf-content {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 footer {
-    height: 100%;
-    flex: 0 1 40px;
+  height: 100%;
+  flex: 0 1 40px;
 }
 
 .main-content {
-   
 }
