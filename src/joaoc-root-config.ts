@@ -7,7 +7,7 @@ import {
 import { RoutesConfig } from "single-spa-layout/dist/types/isomorphic/constructRoutes";
 
 function getTemplate() {
-  fetch("http://localhost:3000/template")
+  fetch("http://rare-animals.portal.docker-desktop/template")
     .then((response) => {
       if (!response.ok) {
         throw new Error(response.statusText);
