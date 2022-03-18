@@ -44,12 +44,13 @@ ingress:
   enabled: enable
   className: "nginx"
   annotations:
+  
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
     - host: rare-animals
       paths:
-        - path: /mf-portal
+        - path: /
           pathType: Prefix
           backend:
             service:
