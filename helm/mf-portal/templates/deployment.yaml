@@ -20,6 +20,7 @@ spec:
       {{- end }}
       labels:
         {{- include "mf-portal.selectorLabels" . | nindent 8 }}
+        date: "{{ now | unixEpoch }}"
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
